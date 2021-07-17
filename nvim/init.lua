@@ -21,4 +21,3 @@ opt.splitright = true
 opt.splitbelow = true
 opt.showmode = false   -- Don't show the current mode
 opt.hidden = true
-

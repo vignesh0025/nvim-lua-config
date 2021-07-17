@@ -27,9 +27,9 @@ local setup = function()
 			calc = true;
 			nvim_lsp = true;
 			nvim_lua = true;
-			snippets_nvim = true;
-			vsnip = false;
-			ultisnips = true;
+			snippets_nvim = false;
+			vsnip = true;
+			ultisnips =true;
 			luasnip = false;
 		};
 	}
@@ -72,6 +72,9 @@ local setup = function()
 	vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 	vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 	vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+	vim.api.nvim_set_keymap("i", "<c-space>", "compe#complete()", { expr = true; noremap = true; silent=true })
+	vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('<CR>')", { expr = true })
 end
 
 return setup

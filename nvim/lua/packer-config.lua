@@ -18,9 +18,11 @@ return require('packer').startup(function()
 	use "wbthomason/packer.nvim"
 
 	use {"SirVer/ultisnips", config=ultisnips_post}
-	-- use "honza/vim-snippets"
-	-- use "norcalli/snippets.nvim"
+	use "honza/vim-snippets"
+	--use {"norcalli/snippets.nvim", config=function() require'snippets' end}
 	use {"hrsh7th/nvim-compe", config=compe_post}
+	use "rafamadriz/friendly-snippets"
+	use "hrsh7th/vim-vsnip"
 
 	use {"neovim/nvim-lspconfig", config=lspconfig_post}
 	use "folke/lua-dev.nvim"
@@ -34,4 +36,5 @@ return require('packer').startup(function()
 			{'nvim-lua/plenary.nvim'}
 		}
 	}
+	use {"ray-x/lsp_signature.nvim" , config=function() require "lsp_signature".setup() end}
 end)
