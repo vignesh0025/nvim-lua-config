@@ -2,6 +2,7 @@ local compe_post = require('compe-config')
 local ultisnips_post = require('ultisnips-config')
 local telescope_post = require('telescope-config')
 local treesitter_post = require('treesitter-config')
+local lspconfig_post = require('lspconfig-config')
 
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 local post_install = nil
@@ -21,7 +22,7 @@ return require('packer').startup(function()
 	-- use "norcalli/snippets.nvim"
 	use {"hrsh7th/nvim-compe", config=compe_post}
 
-	use "neovim/nvim-lspconfig"
+	use {"neovim/nvim-lspconfig", config=lspconfig_post}
 	use "folke/lua-dev.nvim"
 	use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate", config=treesitter_post}
 
